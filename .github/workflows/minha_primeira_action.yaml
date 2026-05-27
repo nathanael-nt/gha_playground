@@ -17,7 +17,7 @@ jobs:
   segundo-job:
     runs-on: ubuntu-latest
 
-    steps
+    steps:
       - run: echo Hoje é $(TZ-"America/Sao Paulo" date +"%d/%m/%Y %H:%M:%S")
       # - run: echo" Agore é $(time)"
     
