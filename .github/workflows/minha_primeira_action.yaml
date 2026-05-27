@@ -5,14 +5,14 @@ jobs:
   meu-job:
    runs-on: ubuntu-latest
 
-    steps:
-      - run: echo "🎉 Este Job foi executado automaticamente por um evento"
-      - run: echo "🐧 Job está rodando em um servidor hospedado pelo GitHub!" 
-      - run: ls -la
+  steps:
+    - run: echo "🎉 Este Job foi executado automaticamente por um evento"
+    - run: echo "🐧 Job está rodando em um servidor hospedado pelo GitHub!" 
+    - run: ls -la
 
-      -ses: actions/checkout@v6
+    - uses: actions/checkout@v6
 
-      - run: ls -la
+    - run: ls -la
     
   segundo-job:
     runs-on: ubuntu-latest
