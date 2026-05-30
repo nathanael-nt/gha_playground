@@ -1,23 +1,26 @@
+name: "[AUTOMATICA] minha primeira ação mb"
+
 on:
   push:
+    branches:
+      - main
+      - master
 
 jobs:
   meu-job:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "🎉 Este Job foi executado automaticamente por um evento"
-      - run: echo "🐧 Job está rodando em um servidor hospedado pelo GitHub!" 
-      - run: ls -la
+      - name: Primeiro Step
+        run: >
+          echo "🎉​ The job was automatically triggered by a event"
+          echo "🐧 This job is now running on a server hosted by a Github!"
 
-      - uses: actions/checkout@v6
+          echo 📅 Hoje é $(TZ="America/Sao_Paulo" date +"%d/%m/%Y %H:%M:%S")
+          echo "Meu repositorio se chama: ${{ github.repository }}"
+          ls -la
+      - name: Git checkout (faz o clone do repo)
+        uses: actions/checkout@v6
 
-      - run: ls -la
-    
-  segundo-job:
-    runs-on: ubuntu-latest
-
-    steps:
-      - run: echo Hoje é $(TZ-"America/Sao Paulo" date +"%d/%m/%Y %H:%M:%S")
-      # - run: echo" Agore é $(time)"
-    
+      - name: "Verifica se o repo foi baixado"
+        run:  ls -la
