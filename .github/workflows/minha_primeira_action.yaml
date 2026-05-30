@@ -6,6 +6,8 @@ on:
       - main
       - master
 
+  workflow_dispatch:
+
 jobs:
   meu-job:
     runs-on: ubuntu-latest
